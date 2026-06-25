@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>REHOBOTH ASSEMBLY HQ</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI,sans-serif;
+}
+
+body{
+background:linear-gradient(180deg,#00142d,#002f66,#004ea8);
+color:white;
+min-height:100vh;
+padding-bottom:100px;
+}
+
+.header{
+padding:25px 20px 10px;
+}
+
+.greeting{
+font-size:28px;
+font-weight:bold;
+}
+
+.username{
+color:#7fd7ff;
+margin-top:5px;
+}
+
+.logo-card{
+margin:20px;
+padding:30px;
+border-radius:25px;
+text-align:center;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(15px);
+box-shadow:0 0 30px rgba(0,170,255,.5);
+animation:glow 3s infinite alternate;
+}
+
+@keyframes glow{
+from{
+box-shadow:0 0 15px #00aaff;
+}
+to{
+box-shadow:0 0 40px #00ffff;
+}
+}
+
+.logo{
+font-size:70px;
+}
+
+.church-name{
+font-size:24px;
+font-weight:bold;
+margin-top:15px;
+}
+
+.church-sub{
+opacity:.8;
+margin-top:10px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr 1fr;
+gap:12px;
+padding:20px;
+}
+
+.btn{
+padding:18px 10px;
+border:none;
+border-radius:18px;
+background:#00aaff;
+color:white;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
+}
+
+.btn:hover{
+transform:scale(1.05);
+}
+
+.info{
+margin:0 20px;
+margin-top:15px;
+}
+
+.info button{
+width:100%;
+padding:18px;
+border:none;
+border-radius:18px;
+background:#00d9ff;
+font-size:16px;
+font-weight:bold;
+color:white;
+}
+
+.bottom-nav{
+position:fixed;
+bottom:0;
+left:0;
+width:100%;
+height:80px;
+background:#00142d;
+display:flex;
+justify-content:space-around;
+align-items:center;
+box-shadow:0 -5px 20px rgba(0,0,0,.3);
+z-index:999;
+}
+
+.nav-item{
+text-align:center;
+font-size:14px;
+cursor:pointer;
+}
+
+.home-btn{
+width:70px;
+height:70px;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+position:relative;
+top:-20px;
+font-weight:bold;
+animation:rgb 4s infinite linear;
+box-shadow:0 0 20px white;
+}
+
+@keyframes rgb{
+
+0%{
+background:#ff0066;
+}
+
+25%{
+background:#00aaff;
+}
+
+50%{
+background:#00ff88;
+}
+
+75%{
+background:#ffcc00;
+}
+
+100%{
+background:#ff0066;
+}
+
+}
+
+.section{
+display:none;
+padding:20px;
+}
+
+.active{
+display:block;
+}
+
+.coming{
+text-align:center;
+font-size:35px;
+margin-top:100px;
+animation:pulse 1s infinite;
+}
+
+@keyframes pulse{
+50%{
+transform:scale(1.1);
+}
+}
+
+.daily-card{
+background:rgba(255,255,255,.08);
+padding:20px;
+border-radius:20px;
+margin-top:20px;
+}
+
+.profile-card{
+background:rgba(255,255,255,.08);
+padding:20px;
+border-radius:20px;
+text-align:center;
+}
+
+.profile-card h2{
+margin-bottom:10px;
+}
+
+.profile-btn{
+width:100%;
+padding:15px;
+margin-top:10px;
+border:none;
+border-radius:15px;
+background:#00aaff;
+color:white;
+font-weight:bold;
+}
+
+.toggle{
+margin-top:15px;
+}
+
+</style>
+</head>
+<body>
+
+<!-- HOME -->
+
+<div id="homeSection" class="active">
+
+<div class="header">
+
+<div class="greeting" id="greeting">
+Good Morning
+</div>
+
+<div class="username" id="username">
+User
+</div>
+
+</div>
+
+<div class="logo-card">
+
+<div class="logo">⛪</div>
+
+<div class="church-name">
+𝚁𝙴𝙷𝙾𝙱𝙾𝚃𝙷 𝙰𝚂𝚂𝙴𝙼𝙱𝙻𝚈 𝙷𝚀
+</div>
+
+<div class="church-sub">
+ᴡᴇ ᴀʀᴇ ɢʟᴀᴅ ᴛᴏ ʜᴀᴠᴇ ʏᴏᴜ ʜᴇʀᴇ
+</div>
+
+</div>
+
+<div class="grid">
+
+<button class="btn" onclick="openLive()">
+LIVE
+</button>
+
+<button class="btn" onclick="showAI()">
+AI CONSULTANT
+</button>
+
+<button class="btn" onclick="location.href='open-heaven.html'">
+OPEN HEAVEN
+</button>
+
+<button class="btn" onclick="location.href='daily-bread.html'">
+DAILY BREAD
+</button>
+
+<button class="btn" onclick="location.href='daily-bible.html'">
+DAILY BIBLE
+</button>
+
+<button class="btn" onclick="location.href='daily-quiz.html'">
+DAILY QUIZ
+</button>
+
+</div>
+
+<div class="info">
+
+<button onclick="openInfo()">
+MORE INFORMATION
+</button>
+
+</div>
+
+</div>
+
+<!-- LIVE -->
+
+<div id="liveSection" class="section">
+
+<h1>🔴 LIVE SERVICE</h1>
+
+<div class="daily-card">
+
+<p>
+No live service available.
+</p>
+
+<p style="margin-top:10px;">
+Add your YouTube live stream later.
+</p>
+
+</div>
+
+</div>
+
+<!-- AI -->
+
+<div id="aiSection" class="section">
+
+<div class="coming">
+COMING SOON 🚀
+</div>
+
+</div>
+
+<!-- DAILY -->
+
+<div id="dailySection" class="section">
+
+<h1>Daily Devotions</h1>
+
+<div class="daily-card">
+Open Heaven
+</div>
+
+<div class="daily-card">
+Daily Bread
+</div>
+
+<div class="daily-card">
+Daily Bible
+</div>
+
+<div class="daily-card">
+Daily Quiz
+</div>
+
+</div>
+
+<!-- ME -->
+
+<div id="meSection" class="section">
+
+<div class="profile-card">
+
+<h2 id="profileName">
+User
+</h2>
+
+<p id="profileEmail">
+Guest User
+</p>
+
+<div class="toggle">
+
+<label>
+
+<input type="checkbox" onchange="toggleDark()">
+
+ Dark Mode
+
+</label>
+
+</div>
+
+<button class="profile-btn">
+EDIT PROFILE
+</button>
+
+<button class="profile-btn" onclick="logout()">
+LOGOUT
+</button>
+
+</div>
+
+</div>
+
+<!-- NAVIGATION -->
+
+<div class="bottom-nav">
+
+<div class="nav-item" onclick="showSection('liveSection')">
+LIVE
+</div>
+
+<div class="nav-item" onclick="showSection('aiSection')">
+AI
+</div>
+
+<div class="home-btn" onclick="showSection('homeSection')">
+HOME
+</div>
+
+<div class="nav-item" onclick="showSection('dailySection')">
+DAILY
+</div>
+
+<div class="nav-item" onclick="showSection('meSection')">
+ME
+</div>
+
+</div>
+
+<script>
+
+let user = JSON.parse(
+localStorage.getItem("rehobothUser")
+);
+
+if(!user){
+
+window.location.href="index.html";
+
+}
+
+document.getElementById("username")
+.innerText = user.name;
+
+document.getElementById("profileName")
+.innerText = user.name;
+
+document.getElementById("profileEmail")
+.innerText = user.email || "Guest User";
+
+let hour = new Date().getHours();
+
+let greeting = "Good Evening";
+
+if(hour < 12){
+
+greeting = "Good Morning";
+
+}else if(hour < 18){
+
+greeting = "Good Afternoon";
+
+}
+
+document.getElementById("greeting")
+.innerText = greeting;
+
+function showSection(id){
+
+document.querySelectorAll(".section")
+.forEach(sec=>sec.classList.remove("active"));
+
+document.getElementById("homeSection")
+.classList.remove("active");
+
+document.getElementById(id)
+.classList.add("active");
+
+}
+
+function showAI(){
+
+showSection("aiSection");
+
+}
+
+function openLive(){
+
+showSection("liveSection");
+
+}
+
+function openInfo(){
+
+window.open(
+"https://yourchurchwebsite.com",
+"_blank"
+);
+
+}
+
+function logout(){
+
+localStorage.removeItem("rehobothUser");
+
+window.location.href="index.html";
+
+}
+
+function toggleDark(){
+
+document.body.classList.toggle("dark");
+
+}
+
+</script>
+
+</body>
+</html>
